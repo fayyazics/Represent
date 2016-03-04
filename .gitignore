@@ -1,3 +1,5 @@
+# Built application files
+*.ap_
 *.iml
 .gradle
 /local.properties
