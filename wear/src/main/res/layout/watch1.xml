@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/watch">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/designbar" />
+
+    <ImageView
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:scaleType="fitXY"
+        android:id="@+id/imageView2"
+        android:background="@drawable/dlogo"
+        android:cropToPadding="false"
+        android:contentDescription="log"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Senator"
+        android:id="@+id/textView"
+        android:textColor="#878787"
+        android:fontFamily=".AppleSystemUIFont"
+        android:textSize="18dp"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Diane Feinstein"
+        android:id="@+id/textView2"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/diane"
+        android:background="@drawable/diane"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/imageView2" />
+
+</RelativeLayout>
