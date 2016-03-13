@@ -12,6 +12,8 @@ import com.google.android.gms.wearable.Node;
 import com.google.android.gms.wearable.NodeApi;
 import com.google.android.gms.wearable.Wearable;
 
+import java.util.ArrayList;
+
 /**
  * Created by fayyazmukarram on 2/29/16.
  */
@@ -46,22 +48,33 @@ public class PhoneToWatchService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
-        Bundle extras = intent.getExtras();
-        final String repName = extras.getString("REP_NAME");
+        if (intent != null) {
+            Bundle extras = intent.getExtras();
+            final ArrayList<Storage> fill = (ArrayList<Storage>) extras.get("fill");
+            // Send the message with the cat name
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    //first, connect to the apiclient
+                    mApiClient.connect();
+                    //now that you're connected, send a massage with the cat name
+                    String data = "";
 
-        // Send the message with the cat name
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //first, connect to the apiclient
-                mApiClient.connect();
-                //now that you're connected, send a massage with the cat name
-                sendMessage("/"+repName,repName);
+                    for (int i = 0; i < fill.size(); i++){
+
+                        if (i == fill.size() - 1){
+                            data += fill.get(i).position + " " + fill.get(i).name + "-" + fill.get(i).party;
+                        }else {
+                            data += fill.get(i).position + " " + fill.get(i).name + "-" + fill.get(i).party + ",";
+                        }
+
+                    }
+                    sendMessage("/0", data);
 
 
-            }
-        }).start();
-
+                }
+            }).start();
+        }
         return START_STICKY;
     }
 

@@ -50,6 +50,26 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
         mWatchApiClient.disconnect();
     }
 
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+
+        Bundle extras = intent.getExtras();
+        final String repName = extras.getString("start_activity");
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                //first, connect to the apiclient
+                mWatchApiClient.connect();
+                //now that you're connected, send a message to activity name
+                sendMessage("/start_activity",repName);
+
+            }
+        }).start();
+
+        return START_STICKY;
+    }
+
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -58,17 +78,12 @@ public class WatchToPhoneService extends Service implements GoogleApiClient.Conn
 
     @Override //alternate method to connecting: no longer create this in a new thread, but as a callback
     public void onConnected(Bundle bundle) {
-        Log.d("T", "in onconnected");
         Wearable.NodeApi.getConnectedNodes(mWatchApiClient)
                 .setResultCallback(new ResultCallback<NodeApi.GetConnectedNodesResult>() {
                     @Override
                     public void onResult(NodeApi.GetConnectedNodesResult getConnectedNodesResult) {
                         nodes = getConnectedNodesResult.getNodes();
-                        Log.d("T", "found nodes");
-                        //when we find a connected node, we populate the list declared above
-                        //finally, we can send a message
-                        sendMessage("/start_activity", "HELP ME");
-                        Log.d("T", "sent");
+
                     }
                 });
     }

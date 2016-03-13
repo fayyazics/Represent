@@ -27,8 +27,10 @@ public class PhoneListenerService extends WearableListenerService {
         Log.d("T", "in PhoneListenerService, got: " + messageEvent.getPath());
         if( messageEvent.getPath().equalsIgnoreCase(START_ACTIVITY) ) {
 
-            Intent intent = new Intent(this,MainActivity4.class);
-            intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK );
+            String value = new String(messageEvent.getData(), StandardCharsets.UTF_8);
+            Intent intent = new Intent(this,MainActivity2.class);
+            intent.addFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra("start_activity", value);
             startActivity(intent);
 
             // so you may notice this crashes the phone because it's

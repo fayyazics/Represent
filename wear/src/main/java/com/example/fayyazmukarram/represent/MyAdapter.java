@@ -34,11 +34,11 @@ public class MyAdapter extends FragmentPagerAdapter {
                 return watch3;
             case 3:
                 if (MainActivity.repName.equals("rep1")) {
-                    WatchFour watch4 = new WatchFour();
-                    return watch4;
-                } else {
                     WatchFive watch5 = new WatchFive();
                     return watch5;
+                } else {
+                    WatchFour watch4 = new WatchFour();
+                    return watch4;
         }
     }
                 return null;

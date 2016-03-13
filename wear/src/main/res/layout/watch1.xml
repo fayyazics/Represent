@@ -50,7 +50,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/diane"
-        android:background="@drawable/diane"
+        android:background="@drawable/democrat"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/imageView2" />
 

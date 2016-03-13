@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Represent!</string>
+    <string name="GOOGLE_API_KEY">AIzaSyA8npTiUXy5NcubkxP5aFKuLcSVTgKX-_w</string>
+    <string name="SUNLIGHT_API_KEY">4c5a600ad22949c4b1678a00907461cb</string>
     <string name="action_settings">Settings</string>
     <string name="logo">string</string>
     <string name="tap">TAP TO ENTER</string>

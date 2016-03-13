@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_id": "primeval-melody-124710",
+    "project_number": "889565920154",
+    "name": "Represent"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889565920154:android:0427ace9fe722eed",
+        "client_id": "android:com.example.fayyazmukarram.represent",
+        "client_type": 1,
+        "android_client_info": {
+          "package_name": "com.example.fayyazmukarram.represent",
+          "certificate_hash": []
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889565920154-qfvddkm9qgj86qrqmrbbpmod4skr5ktr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fayyazmukarram.represent",
+            "certificate_hash": "09948E3B8B9A756BE935845902739F9AA45CCD99"
+          }
+        },
+        {
+          "client_id": "889565920154-mbo2upal58eg6dgcig06hqdqqk1tn744.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "cloud_messaging_service": {
+          "status": 2,
+          "apns_config": []
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "google_signin_service": {
+          "status": 2
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "client_info": [],
+  "ARTIFACT_VERSION": "1"
+}

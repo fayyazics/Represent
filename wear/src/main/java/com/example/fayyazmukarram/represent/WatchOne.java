@@ -18,9 +18,6 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class WatchOne extends Fragment{
 
     ImageView dianeButton;
-    public static String repName="";
-    private GoogleApiClient mGoogleApiClient;
-
 
     @Nullable
     @Override
@@ -30,18 +27,11 @@ public class WatchOne extends Fragment{
 
         dianeButton = (ImageButton) v.findViewById(R.id.diane);
 
-//        Intent intent = getActivity().getIntent();
-//        Bundle extras = intent.getExtras();
-//
-//        if (extras != null) {
-//            repName = extras.getString("REP_NAME");
-//            dianeButton.setImageDrawable(getResources().getDrawable(R.drawable.diane));
-//        }
-
         dianeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent sendIntent = new Intent(getActivity().getBaseContext(), WatchToPhoneService.class);
+                sendIntent.putExtra("REP_NAME","start_activity");
                 getActivity().startService(sendIntent);
             }
         });
